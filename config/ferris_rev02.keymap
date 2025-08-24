@@ -31,7 +31,7 @@
 /* 3) combos { ... }  — your special letters + mode toggles */
 
 
-* 4) macros { ... }  — special letters, windowing, select_* macros, macsearch, macmissioncontrol */
+/* 4) macros { ... }  — special letters, windowing, select_* macros, macsearch, macmissioncontrol */
 
 /* ---------- END: your pasted custom blocks ---------- */
 
