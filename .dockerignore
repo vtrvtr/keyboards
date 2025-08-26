@@ -1,0 +1,29 @@
+# Build artifacts
+build/
+firmware/
+.west/
+
+# Git
+.git/
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules (if any)
+node_modules/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

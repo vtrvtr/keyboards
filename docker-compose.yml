@@ -1,0 +1,11 @@
+services:
+  zmk-build:
+    build: .
+    container_name: zmk-builder
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      - ZEPHYR_TOOLCHAIN_VARIANT=zephyr
+    stdin_open: true
+    tty: true
