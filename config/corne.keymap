@@ -5,52 +5,623 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
+    chosen { zmk,physical-layout = &foostan_corne_5col_layout; };
+};
+
+/ {
+    //////////////////////////////////////////////////////////////////////////
+    //
+    // Miryoku layers and home row mods (ported from my QMK endgame)
+    // - https://sunaku.github.io/home-row-mods.html#porting-to-zmk
+    // - https://github.com/urob/zmk-config#timeless-homerow-mods
+    //
+    //////////////////////////////////////////////////////////////////////////
+    //
+    // HOMEY_HOLDING_TYPE defines the flavor of ZMK hold-tap behavior to use
+    // for the pinky, ring, and middle fingers (which are assigned to Super,
+    // Alt, and Ctrl respectively in the Miryoku system) on home row keys.
+    //
+
+    behaviors {
+        // Home row mod-tap keys for all except index fingers
+        //
+
+        homey_left: miryoku_home_row_mods_left_hand {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_MODS_LEFT_HAND";
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;  // right hand keys for 5-column
+            hold-trigger-on-release; // wait for other home row mods
+            tapping-term-ms = <200>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <170>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        homey_right: miryoku_home_row_mods_right_hand {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_MODS_RIGHT_HAND";
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;  // left hand keys for 5-column
+            hold-trigger-on-release; // wait for other home row mods
+            tapping-term-ms = <200>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <170>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        thumb: thumb_layer_access {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_LAYER_ACCESS";
+            flavor = "balanced";
+            tapping-term-ms = <230>;
+            quick-tap-ms = <300>; // enable repeat
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        lspace: miryoku_thumb_layer_lspacebar {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MIRYOKU_THUMB_LAYER_LSPACEBAR";
+            flavor = "balanced";
+            tapping-term-ms = <270>;
+            quick-tap-ms = <80>; // enable repeat
+            require-prior-idle-ms = <80>;
+            retro-tap; // allow slow (hold-like) taps
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        rspace: miryoku_thumb_layer_rspacebar {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MIRYOKU_THUMB_LAYER_RSPACEBAR";
+            flavor = "balanced";
+            tapping-term-ms = <270>;
+            quick-tap-ms = <80>; // enable repeat
+            require-prior-idle-ms = <80>;
+            retro-tap; // allow slow (hold-like) taps
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+    };
+};
+
+/ {
+    macros {
+        // vtr custom
+        // special letters
+        // ~a
+
+        ZMK_MACRO(tild_a,
+
+        wait-ms = <10>;
+        tap-ms = <40>;
+        bindings = <&kp LS(GRAVE) &kp A>;
+
+        )
+
+        // ê
+
+        ZMK_MACRO(circun_e,
+
+        wait-ms = <10>;
+        tap-ms = <40>;
+        bindings = <&kp LS(NUMBER_6) &kp E>;
+
+        )
+
+        // window movement
+
+        ZMK_MACRO(
+
+        winleft,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_tap &kp LEFT>,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_tap &sk LGUI>,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_release &kp LGUI>;
+
+        // now release the previous hold;
+
+        )
+
+    ZMK_MACRO(
+
+        winright,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_tap &kp RIGHT>,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_tap &sk LGUI>,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_release &kp LGUI>;
+
+        // now release the previous hold;
+
+        )
+
+    ZMK_MACRO(
+
+        winup,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_tap &kp UP>,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_tap &sk LGUI>,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_release &kp LGUI>;
+
+        // now release the previous hold;
+
+        )
+    ZMK_MACRO(
+
+        windown,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_tap &kp DOWN>,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_tap &sk LGUI>,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_release &kp LGUI>;
+
+        // now release the previous hold;
+
+        )
+    ZMK_MACRO(
+
+        winbar,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_tap &kp SPACE>,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            <&macro_release &kp LGUI>;
+
+        // now release the previous hold;
+
+        )
+
+    //////////////////////////////////////////////////////////////////////////
+    //
+    // Approximation of Pascal Getreuer's Select Word macro from QMK
+    // - https://getreuer.info/posts/keyboards/select-word/index.html
+    //
+    //////////////////////////////////////////////////////////////////////////
+    //
+    // SELECT_WORD_DELAY defines how long the macro waits (milliseconds)
+    // after moving the cursor before it selects a word.  A larger delay
+    // may allow the macro to move to the next word upon each invocation.
+    //
+    #ifndef SELECT_WORD_DELAY
+    #define SELECT_WORD_DELAY 1
+    #endif
+
+    ZMK_MACRO(
+
+        select_none,
+        wait-ms = <SELECT_WORD_DELAY>;
+        tap-ms = <SELECT_WORD_DELAY>;
+        bindings = <&kp DOWN &kp UP &kp RIGHT &kp LEFT>;
+
+        )
+
+        //
+        // select a word (jumps to next word upon each successive invocation)
+        //
+
+        select_word: select_word {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SELECT_WORD";
+            #binding-cells = <0>;
+            bindings = <&select_word_right>, <&select_word_left>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ZMK_MACRO(
+
+        select_word_right,
+        wait-ms = <SELECT_WORD_DELAY>;
+        tap-ms = <SELECT_WORD_DELAY>;
+        bindings = <&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>;
+
+        )
+    ZMK_MACRO(
+
+        select_word_left,
+        wait-ms = <SELECT_WORD_DELAY>;
+        tap-ms = <SELECT_WORD_DELAY>;
+        bindings = <&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>;
+
+        )
+
+        //
+        // extend current selection by one word
+        //
+
+        extend_word: extend_word {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EXTEND_WORD";
+            #binding-cells = <0>;
+            bindings = <&extend_word_right>, <&extend_word_left>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ZMK_MACRO(
+
+        extend_word_right,
+        wait-ms = <SELECT_WORD_DELAY>;
+        tap-ms = <SELECT_WORD_DELAY>;
+        bindings = <&kp LC(LS(RIGHT))>;
+
+        )
+    ZMK_MACRO(
+
+        extend_word_left,
+        wait-ms = <SELECT_WORD_DELAY>;
+        tap-ms = <SELECT_WORD_DELAY>;
+        bindings = <&kp LC(LS(LEFT))>;
+
+        )
+
+        //
+        // select current line
+        //
+
+        select_line: select_line {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SELECT_LINE";
+            #binding-cells = <0>;
+            bindings = <&select_line_right>, <&select_line_left>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ZMK_MACRO(
+
+        select_line_right,
+        wait-ms = <SELECT_WORD_DELAY>;
+        tap-ms = <SELECT_WORD_DELAY>;
+        bindings = <&kp HOME &kp LS(END)>;
+
+        )
+    ZMK_MACRO(
+
+        select_line_left,
+        wait-ms = <SELECT_WORD_DELAY>;
+        tap-ms = <SELECT_WORD_DELAY>;
+        bindings = <&kp END &kp LS(HOME)>;
+
+        )
+
+        //
+        // extend current selection by one line
+        //
+
+        extend_line: extend_line {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EXTEND_LINE";
+            #binding-cells = <0>;
+            bindings = <&extend_line_right>, <&extend_line_left>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        a_or_esc: a_or_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "A_OR_ESC";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp ESCAPE>;
+
+            tapping-term-ms = <200>;
+        };
+
+        t_or_tab: t_or_tab {
+            compatible = "zmk,behavior-tap-dance";
+            label = "T_OR_TAB";
+            #binding-cells = <0>;
+            bindings = <&kp T>, <&kp TAB>;
+
+            tapping-term-ms = <250>;
+        };
+
+        home_with_esc: home_with_esc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_WITH_ESC";
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+            hold-trigger-on-release;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <170>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&a_or_esc>;
+        };
+
+        backspace_or_esc: backspace_or_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "BACKSPACE_OR_ESC";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp ESCAPE>;
+
+            tapping-term-ms = <150>;
+        };
+
+        thumb_backspace_esc: thumb_backspace_esc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_BACKSPACE_ESC";
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+            hold-trigger-on-release;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <170>;
+            #binding-cells = <2>;
+            bindings = <&thumb>, <&backspace_or_esc>;
+        };
+
+        longer_hold: longer_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LONGER_HOLD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <210>;
+            require-prior-idle-ms = <80>;
+            quick-tap-ms = <100>;
+        };
+
+        ZMK_MACRO(
+
+        extend_line_right,
+        wait-ms = <SELECT_WORD_DELAY>;
+        tap-ms = <SELECT_WORD_DELAY>;
+        bindings = <&kp LS(DOWN) &kp LS(END)>;
+
+        )
+    ZMK_MACRO(
+
+        extend_line_left,
+        wait-ms = <SELECT_WORD_DELAY>;
+        tap-ms = <SELECT_WORD_DELAY>;
+        bindings = <&kp LS(UP) &kp LS(HOME)>;
+
+        )
+
+        alttab: alttab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_tap>,
+                <&sk LALT>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALTTAB";
+        };
+    };
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        bluetooth {
+            bindings = <&sl 6>;
+            key-positions = <30 31 32>;
+            require-prior-idle-ms = <60>;
+            layers = <0>;
+            timeout-ms = <30>;
+        };
+
+        bootloaderr {
+            bindings = <&sl 6>;
+            key-positions = <33 34 35>;
+            require-prior-idle-ms = <60>;
+            layers = <0>;
+            timeout-ms = <30>;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <12 13>;
+            layers = <0>;
+            require-prior-idle-ms = <15>;
+            timeout-ms = <35>;
+        };
+
+        combo_esc {
+            bindings = <&kp ESC>;
+            key-positions = <11 12>;
+            layers = <0>;
+            require-prior-idle-ms = <15>;
+            timeout-ms = <35>;
+        };
+
+        copy {
+            bindings = <&kp K_PASTE>;
+            key-positions = <23 32>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <15>;
+            layers = <0>;
+        };
+
+        combo_paste {
+            bindings = <&kp K_COPY>;
+            key-positions = <22 32>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <15>;
+            layers = <0>;
+        };
+
+        combo_cut {
+            bindings = <&kp K_CUT>;
+            key-positions = <21 32>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <15>;
+            layers = <0>;
+        };
+
+        cb_move_window_left {
+            bindings = <&kp LC(LA(LS(H)))>;
+            key-positions = <16 17>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <10>;
+            layers = <4>;
+        };
+
+        cb_move_window_right {
+            bindings = <&kp LC(LA(LS(L)))>;
+            key-positions = <18 19>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <10>;
+            layers = <4>;
+        };
+
+        cb_organize_window {
+            bindings = <&kp LC(LA(D))>;
+            key-positions = <17 18>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <15>;
+            layers = <4>;
+        };
+
+        cb_move_window_up {
+            bindings = <&kp LC(LA(LS(J)))>;
+            key-positions = <7 8>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <10>;
+            layers = <4>;
+        };
+
+        cb_move_window_down {
+            bindings = <&kp LC(LA(LS(K)))>;
+            key-positions = <27 28>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <10>;
+            layers = <4>;
+        };
+
+        cb_esc_right {
+            bindings = <&kp ESC>;
+            key-positions = <17 18>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <15>;
+            layers = <0>;
+        };
+
+        cb_close {
+            bindings = <&kp LA(F4)>;
+            key-positions = <28 26 27>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <10>;
+            layers = <4>;
+        };
+
+        cb_semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <18 19>;
+            timeout-ms = <60>;
+            require-prior-idle-ms = <10>;
+            layers = <0>;
+        };
+
+        cb_colon {
+            bindings = <&kp COLON>;
+            key-positions = <13 19>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <10>;
+            layers = <0>;
+        };
+
+        cb_dollar {
+            bindings = <&kp DOLLAR>;
+            key-positions = <16 3>;
+            timeout-ms = <100>;
+            require-prior-idle-ms = <10>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |
+            // |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |
+            // |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+
             bindings = <
-   &kp TAB   &kp W &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+&kp Q  &kp W  &kp E  &longer_hold F5 R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &homey_left LCTRL S  &homey_left LEFT_ALT D  &homey_left LEFT_SHIFT F  &kp G  &homey_right RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SQT  &kp Z  &homey_left LC(X) X  &homey_left LC(C) C  &homey_left LC(V) V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &mt QUESTION SLASH  &kp LGUI  &thumb 2 BACKSPACE  &lspace 3 DEL  &rspace 5 ENTER  &thumb 5 SPACE  &to 4
             >;
         };
 
         lower_layer {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            // |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |
+            // | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |
+            // |     |     |     |     |     |   |     |     |     |     |     |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
+
             bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                           &kp LGUI     &trans       &kp SPACE    &kp RET  &trans   &kp RALT
+&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
-        raise_layer {
+        symbol {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+            // |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |
+            // |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |
+            // |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
+
             bindings = <
-   &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+&kp EXCL  &kp AT  &kp HASH  &longer_hold NUMBER_4 DOLLAR  &kp PRCNT  &kp BACKSLASH  &kp DOUBLE_QUOTES  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE  &kp BACKSPACE  &trans  &trans  &mt TILDE CARET  &kp AMPERSAND  &kp GRAVE  &kp EQUAL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp UNDERSCORE  &mt LESS_THAN LEFT_BRACKET  &mt GREATER_THAN RIGHT_BRACKET  &mt QUESTION SLASH  &kp LGUI  &to 0  &kp SPACE  &kp RET  &trans  &kp RALT
+            >;
+        };
+
+        number {
+            bindings = <
+&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp LS(PRCNT)  &kp BACKSPACE  &trans  &trans  &trans  &trans  &kp N4  &mt EQUAL NUMBER_4  &kp N5  &kp N6  &kp MINUS  &trans  &trans  &trans  &trans  &trans  &kp N1  &kp N1  &kp N2  &kp N3  &kp PLUS  &kp DEL  &trans  &kp N0  &kp PERIOD  &kp N0  &kp COMMA
+            >;
+        };
+
+        navigation {
+            bindings = <
+&kp LC(LA(NUMBER_1))  &kp LC(LA(NUMBER_2))  &kp LC(LA(NUMBER_3))  &kp LC(LA(NUMBER_4))  &kp LC(LA(N5))  &kp LC(LA(LS(NUMBER_1)))  &kp LC(LA(LS(NUMBER_2)))  &kp LC(LA(LS(NUMBER_3)))  &kp LC(LA(LS(NUMBER_4)))  &kp LC(LS(LA(N5)))  &kp LCTRL  &none  &none  &none  &none  &none  &kp LC(LA(H))  &kp LC(LA(J))  &kp LC(LA(K))  &kp LC(LA(L))  &none  &none  &none  &none  &none  &kp LS(LC(LA(P)))  &kp LC(LA(F))  &kp LA(LC(M))  &kp LS(LC(L))  &kp LS(LC(K))  &kp LEFT_WIN  &to 0  &alttab  &to 0  &to 0  &to 0
+            >;
+        };
+
+        window {
+            bindings = <
+&kp LC(Q)  &trans  &trans  &trans  &kp LC(T)  &trans  &trans  &kp HOME  &kp END  &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &kp LC(RIGHT)  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &kp C_VOLUME_DOWN  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_VOLUME_UP  &trans  &select_line  &select_line  &select_word  &trans  &trans  &trans  &alttab  &trans  &trans  &trans
+            >;
+        };
+
+        bootlaader {
+            bindings = <
+&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &bootloader  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &bootloader  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
     };
