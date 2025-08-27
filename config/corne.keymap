@@ -29,7 +29,6 @@
     behaviors {
         // Home row mod-tap keys for all except index fingers
         //
-
         homey_left: miryoku_home_row_mods_left_hand {
             compatible = "zmk,behavior-hold-tap";
             label = "HOME_ROW_MODS_LEFT_HAND";
@@ -58,6 +57,7 @@
     };
 };
 
+
 / {
     macros {
         // vtr custom
@@ -83,88 +83,48 @@
         )
 
         // window movement
-
-        ZMK_MACRO(alttab,
-
-        bindings =
-            <&macro_press &kp LALT>,
-            // leave GUI down to keep menu up,
-            <&macro_tap &kp TAB>,
-            // combines with shift fine,
-            <&macro_tap &sk LALT>,
-            // this will release GUI after a timeout,
-            <&macro_release &kp LALT>,
-            // now release the previous hold;
-
+    ZMK_MACRO(alttab,
+        bindings =  <&macro_press &kp LALT> // leave GUI down to keep menu up
+                , <&macro_tap &kp TAB> // combines with shift fine
+                , <&macro_tap &sk LALT> // this will release GUI after a timeout
+                , <&macro_release &kp LALT> // now release the previous hold
+                        ;
         )
-    ZMK_MACRO(
-
-        winleft,
-        bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,
-            <&macro_tap &kp LEFT>,
-            // combines with shift fine,
-            <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,
-            <&macro_release &kp LGUI>,
-            // now release the previous hold;
-
+    ZMK_MACRO(winleft,
+        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
+                , <&macro_tap &kp LEFT> // combines with shift fine
+                , <&macro_tap &sk LGUI> // this will release GUI after a timeout
+                , <&macro_release &kp LGUI> // now release the previous hold
+                        ;
         )
-    ZMK_MACRO(
-
-        winright,
-        bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,
-            <&macro_tap &kp RIGHT>,
-            // combines with shift fine,
-            <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,
-            <&macro_release &kp LGUI>,
-            // now release the previous hold;
-
+    ZMK_MACRO(winright,
+        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
+                , <&macro_tap &kp RIGHT> // combines with shift fine
+                , <&macro_tap &sk LGUI> // this will release GUI after a timeout
+                , <&macro_release &kp LGUI> // now release the previous hold
+                        ;
         )
-    ZMK_MACRO(
-
-        winup,
-        bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,
-            <&macro_tap &kp UP>,
-            // combines with shift fine,
-            <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,
-            <&macro_release &kp LGUI>,
-            // now release the previous hold;
-
+    ZMK_MACRO(winup,
+        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
+                , <&macro_tap &kp UP> // combines with shift fine
+                , <&macro_tap &sk LGUI> // this will release GUI after a timeout
+                , <&macro_release &kp LGUI> // now release the previous hold
+                        ;
         )
-    ZMK_MACRO(
-
-        windown,
-        bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,
-            <&macro_tap &kp DOWN>,
-            // combines with shift fine,
-            <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,
-            <&macro_release &kp LGUI>,
-            // now release the previous hold;
-
+    ZMK_MACRO(windown,
+        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
+                , <&macro_tap &kp DOWN> // combines with shift fine
+                , <&macro_tap &sk LGUI> // this will release GUI after a timeout
+                , <&macro_release &kp LGUI> // now release the previous hold
+                        ;
         )
-    ZMK_MACRO(
+    ZMK_MACRO(winbar,
+        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
+                , <&macro_tap &kp SPACE> // combines with shift fine
+                , <&macro_release &kp LGUI> // now release the previous hold
+                        ;
+    )
 
-        winbar,
-        bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,
-            <&macro_tap &kp SPACE>,
-            // combines with shift fine,
-            <&macro_release &kp LGUI>,
-            // now release the previous hold;
-
-        )
     //////////////////////////////////////////////////////////////////////////
     //
     // Approximation of Pascal Getreuer's Select Word macro from QMK
@@ -311,6 +271,7 @@
     };
 };
 
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -334,7 +295,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LGUI  &lt 1 BACKSPACE  &kp SPACE  &kp RET  &mo 2  &kp RALT
+&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LGUI  &lt 1 BACKSPACE  &kp SPACE  &kp RET  &mo 2  &kp RALT
             >;
         };
 
