@@ -8,13 +8,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-
 / {
-    chosen {
-        zmk,physical-layout = &foostan_corne_5col_layout;
-    };
+    chosen { zmk,physical-layout = &foostan_corne_5col_layout; };
 };
-
 
 / {
     //////////////////////////////////////////////////////////////////////////
@@ -62,65 +58,113 @@
     };
 };
 
-/ { 
+/ {
+    macros {
+        // vtr custom
+        // special letters
+        // ~a
 
-macros {
-    // vtr custom
-    // special letters
-              // ~a
-    ZMK_MACRO(tild_a,
+        ZMK_MACRO(tild_a,
+
         wait-ms = <10>;
         tap-ms = <40>;
         bindings = <&kp LS(GRAVE) &kp A>;
-    )
-              // ê
-    ZMK_MACRO(circun_e,
+
+        )
+
+        // ê
+
+        ZMK_MACRO(circun_e,
+
         wait-ms = <10>;
         tap-ms = <40>;
         bindings = <&kp LS(NUMBER_6) &kp E>;
-    )
-    // window movement
-    ZMK_MACRO(alttab,
-        bindings =  <&macro_press &kp LALT> // leave GUI down to keep menu up
-                , <&macro_tap &kp TAB> // combines with shift fine
-                , <&macro_tap &sk LALT> // this will release GUI after a timeout
-                , <&macro_release &kp LALT> // now release the previous hold
-                        ;
+
         )
-    ZMK_MACRO(winleft,
-        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
-                , <&macro_tap &kp LEFT> // combines with shift fine
-                , <&macro_tap &sk LGUI> // this will release GUI after a timeout
-                , <&macro_release &kp LGUI> // now release the previous hold
-                        ;
+
+        // window movement
+
+        ZMK_MACRO(alttab,
+
+        bindings =
+            <&macro_press &kp LALT>,
+            // leave GUI down to keep menu up,
+            <&macro_tap &kp TAB>,
+            // combines with shift fine,
+            <&macro_tap &sk LALT>,
+            // this will release GUI after a timeout,
+            <&macro_release &kp LALT>,
+            // now release the previous hold;
+
         )
-    ZMK_MACRO(winright,
-        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
-                , <&macro_tap &kp RIGHT> // combines with shift fine
-                , <&macro_tap &sk LGUI> // this will release GUI after a timeout
-                , <&macro_release &kp LGUI> // now release the previous hold
-                        ;
+    ZMK_MACRO(
+
+        winleft,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,
+            <&macro_tap &kp LEFT>,
+            // combines with shift fine,
+            <&macro_tap &sk LGUI>,
+            // this will release GUI after a timeout,
+            <&macro_release &kp LGUI>,
+            // now release the previous hold;
+
         )
-    ZMK_MACRO(winup,
-        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
-                , <&macro_tap &kp UP> // combines with shift fine
-                , <&macro_tap &sk LGUI> // this will release GUI after a timeout
-                , <&macro_release &kp LGUI> // now release the previous hold
-                        ;
+    ZMK_MACRO(
+
+        winright,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,
+            <&macro_tap &kp RIGHT>,
+            // combines with shift fine,
+            <&macro_tap &sk LGUI>,
+            // this will release GUI after a timeout,
+            <&macro_release &kp LGUI>,
+            // now release the previous hold;
+
         )
-    ZMK_MACRO(windown,
-        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
-                , <&macro_tap &kp DOWN> // combines with shift fine
-                , <&macro_tap &sk LGUI> // this will release GUI after a timeout
-                , <&macro_release &kp LGUI> // now release the previous hold
-                        ;
+    ZMK_MACRO(
+
+        winup,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,
+            <&macro_tap &kp UP>,
+            // combines with shift fine,
+            <&macro_tap &sk LGUI>,
+            // this will release GUI after a timeout,
+            <&macro_release &kp LGUI>,
+            // now release the previous hold;
+
         )
-    ZMK_MACRO(winbar,
-        bindings =  <&macro_press &kp LGUI> // leave GUI down to keep menu up
-                , <&macro_tap &kp SPACE> // combines with shift fine
-                , <&macro_release &kp LGUI> // now release the previous hold
-                        ;
-    )
+    ZMK_MACRO(
+
+        windown,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,
+            <&macro_tap &kp DOWN>,
+            // combines with shift fine,
+            <&macro_tap &sk LGUI>,
+            // this will release GUI after a timeout,
+            <&macro_release &kp LGUI>,
+            // now release the previous hold;
+
+        )
+    ZMK_MACRO(
+
+        winbar,
+        bindings =
+            <&macro_press &kp LGUI>,
+            // leave GUI down to keep menu up,
+            <&macro_tap &kp SPACE>,
+            // combines with shift fine,
+            <&macro_release &kp LGUI>,
+            // now release the previous hold;
+
+        )
     //////////////////////////////////////////////////////////////////////////
     //
     // Approximation of Pascal Getreuer's Select Word macro from QMK
@@ -136,101 +180,136 @@ macros {
     #define SELECT_WORD_DELAY 1
     #endif
 
-    ZMK_MACRO(select_none,
+    ZMK_MACRO(
+
+        select_none,
         wait-ms = <SELECT_WORD_DELAY>;
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp DOWN &kp UP &kp RIGHT &kp LEFT>;
-    )
 
-    //
-    // select a word (jumps to next word upon each successive invocation)
-    //
-    select_word: select_word {
-        compatible = "zmk,behavior-mod-morph";
-        label = "SELECT_WORD";
-        #binding-cells = <0>;
-        bindings = <&select_word_right>, <&select_word_left>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    ZMK_MACRO(select_word_right,
+        )
+
+        //
+        // select a word (jumps to next word upon each successive invocation)
+        //
+
+        select_word: select_word {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SELECT_WORD";
+            #binding-cells = <0>;
+            bindings = <&select_word_right>, <&select_word_left>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ZMK_MACRO(
+
+        select_word_right,
         wait-ms = <SELECT_WORD_DELAY>;
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>;
-    )
-    ZMK_MACRO(select_word_left,
+
+        )
+    ZMK_MACRO(
+
+        select_word_left,
         wait-ms = <SELECT_WORD_DELAY>;
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp LC(LEFT) &kp LC(RIGHT) &kp LC(LS(LEFT))>;
-    )
 
-    //
-    // extend current selection by one word
-    //
-    extend_word: extend_word {
-        compatible = "zmk,behavior-mod-morph";
-        label = "EXTEND_WORD";
-        #binding-cells = <0>;
-        bindings = <&extend_word_right>, <&extend_word_left>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    ZMK_MACRO(extend_word_right,
+        )
+
+        //
+        // extend current selection by one word
+        //
+
+        extend_word: extend_word {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EXTEND_WORD";
+            #binding-cells = <0>;
+            bindings = <&extend_word_right>, <&extend_word_left>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ZMK_MACRO(
+
+        extend_word_right,
         wait-ms = <SELECT_WORD_DELAY>;
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp LC(LS(RIGHT))>;
-    )
-    ZMK_MACRO(extend_word_left,
+
+        )
+    ZMK_MACRO(
+
+        extend_word_left,
         wait-ms = <SELECT_WORD_DELAY>;
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp LC(LS(LEFT))>;
-    )
 
-    //
-    // select current line
-    //
-    select_line: select_line {
-        compatible = "zmk,behavior-mod-morph";
-        label = "SELECT_LINE";
-        #binding-cells = <0>;
-        bindings = <&select_line_right>, <&select_line_left>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    ZMK_MACRO(select_line_right,
+        )
+
+        //
+        // select current line
+        //
+
+        select_line: select_line {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SELECT_LINE";
+            #binding-cells = <0>;
+            bindings = <&select_line_right>, <&select_line_left>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ZMK_MACRO(
+
+        select_line_right,
         wait-ms = <SELECT_WORD_DELAY>;
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp HOME &kp LS(END)>;
-    )
-    ZMK_MACRO(select_line_left,
+
+        )
+    ZMK_MACRO(
+
+        select_line_left,
         wait-ms = <SELECT_WORD_DELAY>;
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp END &kp LS(HOME)>;
-    )
 
-    //
-    // extend current selection by one line
-    //
-    extend_line: extend_line {
-        compatible = "zmk,behavior-mod-morph";
-        label = "EXTEND_LINE";
-        #binding-cells = <0>;
-        bindings = <&extend_line_right>, <&extend_line_left>;
-        mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    ZMK_MACRO(extend_line_right,
+        )
+
+        //
+        // extend current selection by one line
+        //
+
+        extend_line: extend_line {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EXTEND_LINE";
+            #binding-cells = <0>;
+            bindings = <&extend_line_right>, <&extend_line_left>;
+
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ZMK_MACRO(
+
+        extend_line_right,
         wait-ms = <SELECT_WORD_DELAY>;
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp LS(DOWN) &kp LS(END)>;
-    )
-    ZMK_MACRO(extend_line_left,
+
+        )
+    ZMK_MACRO(
+
+        extend_line_left,
         wait-ms = <SELECT_WORD_DELAY>;
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp LS(UP) &kp LS(HOME)>;
-    )
+
+        )
+    };
 };
-
-
-};
-
-
 
 / {
     combos {
@@ -255,10 +334,7 @@ macros {
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P
-   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI
-   &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LGUI  &lt 1 BACKSPACE  &kp SPACE  &kp RET  &mo 2  &kp RALT
             >;
         };
 
@@ -270,10 +346,7 @@ macros {
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-   &kp N1        &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0
-   &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans
-   &trans        &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans
-                                          &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
+&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
@@ -285,10 +358,7 @@ macros {
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR
-   &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH
-   &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE
-                          &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
+&kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &trans  &trans  &trans  &trans  &trans  &kp UNDER  &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
     };
