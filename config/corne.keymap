@@ -85,20 +85,14 @@
         // window movement
 
         ZMK_MACRO(alttab,
-
         bindings =
             <&macro_press &kp LALT>,
-            // leave GUI down to keep menu up,
             <&macro_tap &kp TAB>,
-            // combines with shift fine,
             <&macro_tap &sk LALT>,
-            // this will release GUI after a timeout,
-            <&macro_release &kp LALT>,
-            // now release the previous hold;
-
+            <&macro_release &kp LALT>;
         )
-    ZMK_MACRO(
 
+    ZMK_MACRO(
         winleft,
         bindings =
             <&macro_press &kp LGUI>,
@@ -107,12 +101,12 @@
             // combines with shift fine,
             <&macro_tap &sk LGUI>,
             // this will release GUI after a timeout,
-            <&macro_release &kp LGUI>,
+            <&macro_release &kp LGUI>;
             // now release the previous hold;
 
         )
-    ZMK_MACRO(
 
+    ZMK_MACRO(
         winright,
         bindings =
             <&macro_press &kp LGUI>,
@@ -121,12 +115,12 @@
             // combines with shift fine,
             <&macro_tap &sk LGUI>,
             // this will release GUI after a timeout,
-            <&macro_release &kp LGUI>,
+            <&macro_release &kp LGUI>;
             // now release the previous hold;
 
         )
-    ZMK_MACRO(
 
+    ZMK_MACRO(
         winup,
         bindings =
             <&macro_press &kp LGUI>,
@@ -135,7 +129,7 @@
             // combines with shift fine,
             <&macro_tap &sk LGUI>,
             // this will release GUI after a timeout,
-            <&macro_release &kp LGUI>,
+            <&macro_release &kp LGUI>;
             // now release the previous hold;
 
         )
@@ -149,7 +143,7 @@
             // combines with shift fine,
             <&macro_tap &sk LGUI>,
             // this will release GUI after a timeout,
-            <&macro_release &kp LGUI>,
+            <&macro_release &kp LGUI>;
             // now release the previous hold;
 
         )
@@ -161,7 +155,7 @@
             // leave GUI down to keep menu up,
             <&macro_tap &kp SPACE>,
             // combines with shift fine,
-            <&macro_release &kp LGUI>,
+            <&macro_release &kp LGUI>;
             // now release the previous hold;
 
         )
