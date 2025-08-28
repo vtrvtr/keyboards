@@ -72,7 +72,7 @@
             flavor = "balanced";
             tapping-term-ms = <270>;
             quick-tap-ms = <80>; // enable repeat
-            require-prior-idle-ms = <LSPACE_STREAK_DECAY>;
+            require-prior-idle-ms = <80>;
             retro-tap; // allow slow (hold-like) taps
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
@@ -84,7 +84,7 @@
             flavor = "balanced";
             tapping-term-ms = <270>;
             quick-tap-ms = <80>; // enable repeat
-            require-prior-idle-ms = <RSPACE_STREAK_DECAY>;
+            require-prior-idle-ms = <80>;
             retro-tap; // allow slow (hold-like) taps
             #binding-cells = <2>;
             bindings = <&mo>, <&kp>;
@@ -133,11 +133,11 @@
         winleft,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,
+            // leave GUI down to keep menu up,,,,,
             <&macro_tap &kp LEFT>,
-            // combines with shift fine,,,,
+            // combines with shift fine,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,
+            // this will release GUI after a timeout,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -149,11 +149,11 @@
         winright,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,
+            // leave GUI down to keep menu up,,,,,
             <&macro_tap &kp RIGHT>,
-            // combines with shift fine,,,,
+            // combines with shift fine,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,
+            // this will release GUI after a timeout,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -165,11 +165,11 @@
         winup,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,
+            // leave GUI down to keep menu up,,,,,
             <&macro_tap &kp UP>,
-            // combines with shift fine,,,,
+            // combines with shift fine,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,
+            // this will release GUI after a timeout,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -180,11 +180,11 @@
         windown,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,
+            // leave GUI down to keep menu up,,,,,
             <&macro_tap &kp DOWN>,
-            // combines with shift fine,,,,
+            // combines with shift fine,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,
+            // this will release GUI after a timeout,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -195,9 +195,9 @@
         winbar,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,
+            // leave GUI down to keep menu up,,,,,
             <&macro_tap &kp SPACE>,
-            // combines with shift fine,,,,
+            // combines with shift fine,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -331,13 +331,13 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        f_or_esc: f_or_esc {
+        q_or_esc: q_or_esc {
             compatible = "zmk,behavior-tap-dance";
-            label = "F_OR_ESC";
+            label = "Q_OR_ESC";
             #binding-cells = <0>;
-            bindings = <&kp F>, <&kp ESCAPE>;
+            bindings = <&kp Q>, <&kp ESCAPE>;
 
-            tapping-term-ms = <300>;
+            tapping-term-ms = <250>;
         };
 
         ZMK_MACRO(
@@ -382,7 +382,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &kp S  &kp D  &f_or_esc  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LGUI  &lt 1 BACKSPACE  &kp SPACE  &kp RET  &mo 2  &kp RALT
+&q_or_esc  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &homey_left LCTRL S  &homey_left D LEFT_ALT  &homey_left F LEFT_SHIFT  &kp G  &homey_right RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LGUI  &thumb 1 BACKSPACE  &thumb 3 SPACE  &thumb 5 ENTER  &thumb 2 SPACE  &kp RALT
             >;
         };
 
@@ -413,6 +413,18 @@
         number {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &kp N7  &kp N8  &kp N9  &kp MINUS  &trans  &trans  &trans  &trans  &trans  &trans  &kp N4  &kp N5  &kp N6  &kp PLUS  &trans  &trans  &trans  &trans  &trans  &trans  &kp N1  &kp N2  &kp N3  &kp FSLH  &kp DEL  &kp DEL  &trans  &trans  &kp N0  &kp DOT  &kp DOT
+            >;
+        };
+
+        navigation {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        window {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
