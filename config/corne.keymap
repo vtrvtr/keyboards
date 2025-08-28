@@ -55,6 +55,39 @@
             #binding-cells = <2>;
             bindings = <&kp>, <&kp>;
         };
+
+
+        thumb: thumb_layer_access {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_LAYER_ACCESS";
+            flavor = "balanced";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+        lspace: miryoku_thumb_layer_lspacebar {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MIRYOKU_THUMB_LAYER_LSPACEBAR";
+            flavor = "balanced";
+            tapping-term-ms = <LSPACE_HOLDING_TIME>;
+            quick-tap-ms = <LSPACE_REPEAT_DECAY>; // enable repeat
+            require-prior-idle-ms = <LSPACE_STREAK_DECAY>;
+            retro-tap; // allow slow (hold-like) taps
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+        rspace: miryoku_thumb_layer_rspacebar {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MIRYOKU_THUMB_LAYER_RSPACEBAR";
+            flavor = "balanced";
+            tapping-term-ms = <RSPACE_HOLDING_TIME>;
+            quick-tap-ms = <RSPACE_REPEAT_DECAY>; // enable repeat
+            require-prior-idle-ms = <RSPACE_STREAK_DECAY>;
+            retro-tap; // allow slow (hold-like) taps
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
     };
 };
 
