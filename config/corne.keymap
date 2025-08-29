@@ -133,11 +133,11 @@
         winleft,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,
             <&macro_tap &kp LEFT>,
-            // combines with shift fine,,,,,,,,
+            // combines with shift fine,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -149,11 +149,11 @@
         winright,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,
             <&macro_tap &kp RIGHT>,
-            // combines with shift fine,,,,,,,,
+            // combines with shift fine,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -165,11 +165,11 @@
         winup,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,
             <&macro_tap &kp UP>,
-            // combines with shift fine,,,,,,,,
+            // combines with shift fine,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -180,11 +180,11 @@
         windown,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,
             <&macro_tap &kp DOWN>,
-            // combines with shift fine,,,,,,,,
+            // combines with shift fine,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -195,9 +195,9 @@
         winbar,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,
             <&macro_tap &kp SPACE>,
-            // combines with shift fine,,,,,,,,
+            // combines with shift fine,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -357,11 +357,20 @@
 
         )
 
-        alt_tab: alttab_macro {
+        alttab: alttab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&alttab>;
-            label = "Alt tab macro";
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_tap>,
+                <&sk LALT>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "ALTTAB";
         };
     };
 };
