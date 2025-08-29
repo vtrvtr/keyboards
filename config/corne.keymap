@@ -118,26 +118,16 @@
 
         // window movement
 
-        ZMK_MACRO(alttab,
-
-        bindings =
-            <&macro_press &kp LALT>,
-            <&macro_tap &kp TAB>,
-            <&macro_tap &sk LALT>,
-            <&macro_release &kp LALT>;
-
-        )
-
     ZMK_MACRO(
 
         winleft,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,
             <&macro_tap &kp LEFT>,
-            // combines with shift fine,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -145,15 +135,14 @@
         )
 
     ZMK_MACRO(
-
         winright,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,
             <&macro_tap &kp RIGHT>,
-            // combines with shift fine,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -165,11 +154,11 @@
         winup,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,
             <&macro_tap &kp UP>,
-            // combines with shift fine,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -180,11 +169,11 @@
         windown,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,
             <&macro_tap &kp DOWN>,
-            // combines with shift fine,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -195,9 +184,9 @@
         winbar,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,
             <&macro_tap &kp SPACE>,
-            // combines with shift fine,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -386,14 +375,11 @@
             layers = <0>;
         };
 
-        alttab_combo {
-            bindings = <&alttab>;
-            key-positions = <34 31>;
-        };
-
         bootloader_r {
             bindings = <&bootloader>;
             key-positions = <35 34>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
         };
     };
 
@@ -450,7 +436,7 @@
 
         window {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &alttab  &trans  &trans  &trans
             >;
         };
     };
