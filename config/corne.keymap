@@ -123,11 +123,11 @@
         winleft,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp LEFT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -139,11 +139,11 @@
         winright,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp RIGHT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -155,11 +155,11 @@
         winup,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp UP>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -170,11 +170,11 @@
         windown,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp DOWN>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -185,9 +185,9 @@
         winbar,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp SPACE>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -321,13 +321,13 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        q_or_esc: q_or_esc {
+        a_or_esc: a_or_esc {
             compatible = "zmk,behavior-tap-dance";
-            label = "Q_OR_ESC";
+            label = "A_OR_ESC";
             #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp ESCAPE>;
+            bindings = <&kp A>, <&kp ESCAPE>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
         };
 
         t_or_tab: t_or_tab {
@@ -337,6 +337,19 @@
             bindings = <&kp T>, <&kp TAB>;
 
             tapping-term-ms = <250>;
+        };
+
+        home_with_esc: home_with_esc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_WITH_ESC";
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+            hold-trigger-on-release;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <170>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&a_or_esc>;
         };
 
         ZMK_MACRO(
@@ -406,7 +419,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&q_or_esc  &kp W  &kp E  &kp R  &t_or_tab  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &homey_left LCTRL S  &homey_left LEFT_ALT D  &homey_left LEFT_SHIFT F  &kp G  &homey_right RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LGUI  &thumb 2 BACKSPACE  &lspace 3 SPACE  &rspace 5 ENTER  &thumb 5 SPACE  &none
+&kp Q  &kp W  &kp E  &kp R  &t_or_tab  &kp Y  &kp U  &kp I  &kp O  &kp P  &home_with_esc LGUI 0  &homey_left LCTRL S  &homey_left LEFT_ALT D  &homey_left LEFT_SHIFT F  &kp G  &homey_right RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LGUI  &thumb 2 BACKSPACE  &lspace 3 SPACE  &rspace 5 ENTER  &thumb 5 SPACE  &none
             >;
         };
 
