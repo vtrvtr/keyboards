@@ -123,11 +123,11 @@
         winleft,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp LEFT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -139,11 +139,11 @@
         winright,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp RIGHT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -155,11 +155,11 @@
         winup,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp UP>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -170,11 +170,11 @@
         windown,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp DOWN>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -185,9 +185,9 @@
         winbar,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp SPACE>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -444,6 +444,30 @@
             require-prior-idle-ms = <15>;
             timeout-ms = <35>;
         };
+
+        copy {
+            bindings = <&kp K_PASTE>;
+            key-positions = <23 32>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <15>;
+            layers = <0>;
+        };
+
+        combo_paste {
+            bindings = <&kp K_COPY>;
+            key-positions = <22 32>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <15>;
+            layers = <0>;
+        };
+
+        combo_cut {
+            bindings = <&kp K_CUT>;
+            key-positions = <21 32>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <15>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -457,7 +481,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &homey_left LCTRL S  &homey_left LEFT_ALT D  &homey_left LEFT_SHIFT F  &kp G  &homey_right RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LGUI  &thumb 2 BACKSPACE  &lspace 3 SPACE  &rspace 5 ENTER  &thumb 5 SPACE  &none
+&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &homey_left LCTRL S  &homey_left LEFT_ALT D  &homey_left LEFT_SHIFT F  &kp G  &homey_right RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &mt QUESTION SLASH  &kp LGUI  &thumb 2 BACKSPACE  &lspace 3 SPACE  &rspace 5 ENTER  &thumb 5 SPACE  &to 4
             >;
         };
 
@@ -493,7 +517,7 @@
 
         navigation {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&none  &none  &none  &none  &none  &kp LC(LA(LS(NUMBER_1)))  &kp LC(LA(LS(NUMBER_2)))  &kp LC(LA(LS(NUMBER_3)))  &kp LC(LA(LS(NUMBER_4)))  &kp LC(LS(LA(LALT)))  &kp LCTRL  &none  &none  &none  &none  &none  &kp LC(LA(H))  &kp LC(LA(J))  &kp LC(LA(K))  &kp LC(LA(L))  &none  &none  &none  &none  &none  &kp LS(LC(LA(P)))  &kp LC(LA(F))  &kp LS(LC(J))  &kp LS(LC(L))  &kp LS(LC(K))  &none  &to 0  &to 0  &to 0  &to 0  &to 0
             >;
         };
 
