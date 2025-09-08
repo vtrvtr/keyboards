@@ -43,10 +43,10 @@
             bindings = <&kp>, <&kp>;
         };
 
-        homey_right: miryoku_home_row_mods_right_hand {
+        homey_right: home_row_mods_right_hand {
             compatible = "zmk,behavior-hold-tap";
             label = "HOME_ROW_MODS_RIGHT_HAND";
-            flavor = "tap-preferred";
+            flavor = "balanced";
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;  // left hand keys for 5-column
             hold-trigger-on-release; // wait for other home row mods
             tapping-term-ms = <200>;
@@ -123,11 +123,11 @@
         winleft,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp LEFT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -139,11 +139,11 @@
         winright,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp RIGHT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -155,11 +155,11 @@
         winup,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp UP>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -170,11 +170,11 @@
         windown,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp DOWN>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -185,9 +185,9 @@
         winbar,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp SPACE>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -564,9 +564,10 @@
         cb_dollar {
             bindings = <&kp DOLLAR>;
             key-positions = <16 3>;
-            timeout-ms = <100>;
+            timeout-ms = <150>;
             require-prior-idle-ms = <10>;
             layers = <0>;
+            slow-release;
         };
     };
 
