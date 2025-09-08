@@ -1,8 +1,8 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
+* Copyright (c) 2020 The ZMK Contributors
+*
+* SPDX-License-Identifier: MIT
+*/
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -122,94 +122,94 @@
 
         winleft,
         bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_tap &kp LEFT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_release &kp LGUI>;
+        <&macro_press &kp LGUI>,
+        // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_tap &kp LEFT>,
+        // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_tap &sk LGUI>,
+        // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_release &kp LGUI>;
 
         // now release the previous hold;
 
         )
 
-    ZMK_MACRO(
+        ZMK_MACRO(
 
         winright,
         bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_tap &kp RIGHT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_release &kp LGUI>;
+        <&macro_press &kp LGUI>,
+        // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_tap &kp RIGHT>,
+        // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_tap &sk LGUI>,
+        // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_release &kp LGUI>;
 
         // now release the previous hold;
 
         )
 
-    ZMK_MACRO(
+        ZMK_MACRO(
 
         winup,
         bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_tap &kp UP>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_release &kp LGUI>;
+        <&macro_press &kp LGUI>,
+        // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_tap &kp UP>,
+        // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_tap &sk LGUI>,
+        // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_release &kp LGUI>;
 
         // now release the previous hold;
 
         )
-    ZMK_MACRO(
+        ZMK_MACRO(
 
         windown,
         bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_tap &kp DOWN>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_release &kp LGUI>;
+        <&macro_press &kp LGUI>,
+        // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_tap &kp DOWN>,
+        // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_tap &sk LGUI>,
+        // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_release &kp LGUI>;
 
         // now release the previous hold;
 
         )
-    ZMK_MACRO(
+        ZMK_MACRO(
 
         winbar,
         bindings =
-            <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_tap &kp SPACE>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-            <&macro_release &kp LGUI>;
+        <&macro_press &kp LGUI>,
+        // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_tap &kp SPACE>,
+        // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        <&macro_release &kp LGUI>;
 
         // now release the previous hold;
 
         )
 
-    //////////////////////////////////////////////////////////////////////////
-    //
-    // Approximation of Pascal Getreuer's Select Word macro from QMK
-    // - https://getreuer.info/posts/keyboards/select-word/index.html
-    //
-    //////////////////////////////////////////////////////////////////////////
-    //
-    // SELECT_WORD_DELAY defines how long the macro waits (milliseconds)
-    // after moving the cursor before it selects a word.  A larger delay
-    // may allow the macro to move to the next word upon each invocation.
-    //
-    #ifndef SELECT_WORD_DELAY
-    #define SELECT_WORD_DELAY 1
-    #endif
+        //////////////////////////////////////////////////////////////////////////
+        //
+        // Approximation of Pascal Getreuer's Select Word macro from QMK
+        // - https://getreuer.info/posts/keyboards/select-word/index.html
+        //
+        //////////////////////////////////////////////////////////////////////////
+        //
+        // SELECT_WORD_DELAY defines how long the macro waits (milliseconds)
+        // after moving the cursor before it selects a word.  A larger delay
+        // may allow the macro to move to the next word upon each invocation.
+        //
+        #ifndef SELECT_WORD_DELAY
+        #define SELECT_WORD_DELAY 1
+        #endif
 
-    ZMK_MACRO(
+        ZMK_MACRO(
 
         select_none,
         wait-ms = <SELECT_WORD_DELAY>;
@@ -239,7 +239,7 @@
         bindings = <&kp LC(RIGHT) &kp LC(LEFT) &kp LC(LS(RIGHT))>;
 
         )
-    ZMK_MACRO(
+        ZMK_MACRO(
 
         select_word_left,
         wait-ms = <SELECT_WORD_DELAY>;
@@ -269,7 +269,7 @@
         bindings = <&kp LC(LS(RIGHT))>;
 
         )
-    ZMK_MACRO(
+        ZMK_MACRO(
 
         extend_word_left,
         wait-ms = <SELECT_WORD_DELAY>;
@@ -299,7 +299,7 @@
         bindings = <&kp HOME &kp LS(END)>;
 
         )
-    ZMK_MACRO(
+        ZMK_MACRO(
 
         select_line_left,
         wait-ms = <SELECT_WORD_DELAY>;
@@ -394,7 +394,7 @@
         bindings = <&kp LS(DOWN) &kp LS(END)>;
 
         )
-    ZMK_MACRO(
+        ZMK_MACRO(
 
         extend_line_left,
         wait-ms = <SELECT_WORD_DELAY>;
@@ -407,14 +407,14 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
-                <&kp LEFT_ALT>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_tap>,
-                <&sk LALT>,
-                <&macro_release>,
-                <&kp LEFT_ALT>;
+            <&macro_press>,
+            <&kp LEFT_ALT>,
+            <&macro_tap>,
+            <&kp TAB>,
+            <&macro_tap>,
+            <&sk LALT>,
+            <&macro_release>,
+            <&kp LEFT_ALT>;
 
             label = "ALTTAB";
         };
@@ -582,7 +582,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp Q  &kp W  &kp E  &longer_hold F5 R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &homey_left LCTRL S  &homey_left LEFT_ALT D  &homey_left LEFT_SHIFT F  &kp G  &homey_right RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SQT  &kp Z  &homey_left LC(X) X  &homey_left LC(C) C  &homey_left LC(V) V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &mt QUESTION SLASH  &kp LGUI  &thumb 2 BACKSPACE  &lspace 3 DEL  &rspace 5 ENTER  &thumb 5 SPACE  &to 4
+            &kp Q  &kp W  &kp E  &longer_hold F5 R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &homey_left LCTRL S  &homey_left LEFT_ALT D  &homey_left LEFT_SHIFT F  &kp G  &homey_right RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SQT  &kp Z  &homey_left LC(X) X  &homey_left LC(C) C  &homey_left LC(V) V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &mt QUESTION SLASH  &kp LGUI  &thumb 2 BACKSPACE  &lspace 3 DEL  &rspace 5 ENTER  &thumb 5 SPACE  &to 4
             >;
         };
 
@@ -594,7 +594,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
+            &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
@@ -606,31 +606,31 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp EXCL  &kp AT  &kp HASH  &longer_hold NUMBER_4 DOLLAR  &kp PRCNT  &kp BACKSLASH  &kp DOUBLE_QUOTES  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE  &kp BACKSPACE  &trans  &trans  &mt TILDE CARET  &kp AMPERSAND  &kp GRAVE  &kp EQUAL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp UNDERSCORE  &mt LESS_THAN LEFT_BRACKET  &mt GREATER_THAN RIGHT_BRACKET  &mt QUESTION SLASH  &kp LGUI  &to 0  &kp SPACE  &kp RET  &trans  &kp RALT
+            &kp EXCL  &kp AT  &kp HASH  &longer_hold NUMBER_4 DOLLAR  &kp PRCNT  &kp BACKSLASH  &kp DOUBLE_QUOTES  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE  &kp BACKSPACE  &trans  &trans  &mt TILDE CARET  &kp AMPERSAND  &kp GRAVE  &kp EQUAL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp UNDERSCORE  &mt LESS_THAN LEFT_BRACKET  &mt GREATER_THAN RIGHT_BRACKET  &mt QUESTION SLASH  &kp LGUI  &to 0  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
         number {
             bindings = <
-&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp LS(PRCNT)  &kp BACKSPACE  &trans  &trans  &trans  &trans  &kp N4  &mt EQUAL NUMBER_4  &kp N5  &kp N6  &kp MINUS  &trans  &trans  &trans  &trans  &trans  &kp N1  &kp N1  &kp N2  &kp N3  &kp PLUS  &kp DEL  &trans  &kp N0  &kp PERIOD  &kp N0  &kp COMMA
+            &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp LS(PRCNT)  &kp BACKSPACE  &trans  &trans  &trans  &trans  &kp N4  &mt EQUAL NUMBER_4  &kp N5  &kp N6  &kp MINUS  &trans  &trans  &trans  &trans  &trans  &kp N1  &kp N1  &kp N2  &kp N3  &kp PLUS  &kp DEL  &trans  &kp N0  &kp PERIOD  &kp N0  &kp COMMA
             >;
         };
 
         navigation {
             bindings = <
-&kp LC(LA(NUMBER_1))  &kp LC(LA(NUMBER_2))  &kp LC(LA(NUMBER_3))  &kp LC(LA(NUMBER_4))  &kp LC(LA(N5))  &kp LC(LA(LS(NUMBER_1)))  &kp LC(LA(LS(NUMBER_2)))  &kp LC(LA(LS(NUMBER_3)))  &kp LC(LA(LS(NUMBER_4)))  &kp LC(LS(LA(N5)))  &kp LCTRL  &none  &to 0  &to 0  &none  &none  &kp LC(LA(H))  &kp LC(LA(J))  &kp LC(LA(K))  &kp LC(LA(L))  &none  &none  &none  &none  &none  &kp LS(LC(LA(P)))  &kp LC(LA(F))  &kp LA(LC(M))  &kp LS(LC(L))  &kp LS(LC(K))  &lgui_and_type  &to 0  &alttab  &to 0  &to 0  &to 0
+            &kp LC(LA(NUMBER_1))  &kp LC(LA(NUMBER_2))  &kp LC(LA(NUMBER_3))  &kp LC(LA(NUMBER_4))  &kp LC(LA(N5))  &kp LC(LA(LS(NUMBER_1)))  &kp LC(LA(LS(NUMBER_2)))  &kp LC(LA(LS(NUMBER_3)))  &kp LC(LA(LS(NUMBER_4)))  &kp LC(LS(LA(N5)))  &kp LCTRL  &none  &to 0  &to 0  &none  &none  &kp LC(LA(H))  &kp LC(LA(J))  &kp LC(LA(K))  &kp LC(LA(L))  &none  &none  &none  &none  &none  &kp LS(LC(LA(P)))  &kp LC(LA(F))  &kp LA(LC(M))  &kp LS(LC(L))  &kp LS(LC(K))  &lgui_and_type  &to 0  &alttab  &to 0  &to 0  &to 0
             >;
         };
 
         window {
             bindings = <
-&kp LC(Q)  &trans  &trans  &trans  &kp LC(T)  &trans  &trans  &kp HOME  &kp END  &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &kp LC(RIGHT)  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &kp C_VOLUME_DOWN  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_VOLUME_UP  &trans  &select_line  &select_line  &select_word  &trans  &trans  &trans  &alttab  &trans  &trans  &trans
+            &kp LC(Q)  &trans  &trans  &trans  &kp LC(T)  &trans  &trans  &kp HOME  &kp END  &trans  &trans  &kp LC(LEFT_ARROW)  &kp LC(LEFT_ARROW)  &kp LC(RIGHT)  &kp LC(RIGHT)  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &kp C_VOLUME_DOWN  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_VOLUME_UP  &trans  &select_line  &select_line  &select_word  &trans  &trans  &trans  &alttab  &trans  &trans  &trans
             >;
         };
 
         bootlaader {
             bindings = <
-&kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &bootloader  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &bootloader  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
+            &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &bootloader  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &bootloader  &kp LGUI  &trans  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
     };
