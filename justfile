@@ -14,14 +14,18 @@ setup:
 # Build firmware for both sides
 build side="both":
     ./scripts/docker-build.sh build {{side}}
+    # Regenerate keymap diagram (non-fatal if tooling missing)
+    just keymap || echo "ℹ️  Skipping keymap diagram (keymap-drawer missing)"
 
 # Build only left side
 build-left:
     ./scripts/docker-build.sh build left
+    just keymap || echo "ℹ️  Skipping keymap diagram (keymap-drawer missing)"
 
 # Build only right side  
 build-right:
     ./scripts/docker-build.sh build right
+    just keymap || echo "ℹ️  Skipping keymap diagram (keymap-drawer missing)"
 
 # Open interactive shell in Docker container
 shell:
@@ -109,3 +113,22 @@ dev: update build
 # List all available recipes
 list:
     @just --list
+
+# Generate keymap diagram (SVG)
+keymap:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    echo "🖼  Generating keymap SVG..."
+    # Detect keymap-drawer CLI
+    if command -v keymap >/dev/null 2>&1; then
+        GEN="keymap"
+    elif python3 -m keymap_drawer --help >/dev/null 2>&1; then
+        GEN="python3 -m keymap_drawer"
+    else
+        echo "❌ keymap-drawer not found. Install with: pipx install keymap-drawer" >&2
+        exit 1
+    fi
+    $GEN parse -z config/corne.keymap -o keymap.yaml
+    mkdir -p assets
+    $GEN draw -j config/info.json -l LAYOUT_split_3x5_3 keymap.yaml -o assets/corne_keymap.svg
+    echo "✅ Wrote assets/corne_keymap.svg"

@@ -3,7 +3,8 @@
   "packages": [
     "python313Packages.west@latest",
     "just@latest",
-    "cmake@latest"
+    "cmake@latest",
+    "python313Packages.keymap-drawer@latest"
   ],
   "shell": {
     "init_hook": [

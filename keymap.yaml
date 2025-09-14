@@ -1,0 +1,313 @@
+layout: {zmk_keyboard: corne, layout_name: foostan_corne_5col_layout}
+layers:
+  default:
+  - Q
+  - W
+  - E
+  - {t: R, h: F5}
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: A, h: LGUI}
+  - {t: S, h: LCTRL}
+  - {t: D, h: LEFT ALT}
+  - {t: F, h: LEFT SHIFT}
+  - G
+  - {t: H, h: RSHFT}
+  - {t: J, h: LEFT SHIFT}
+  - {t: K, h: LEFT ALT}
+  - {t: L, h: LCTRL}
+  - {t: '''', h: LGUI}
+  - Z
+  - {t: X, h: Ctl+X}
+  - {t: C, h: Ctl+C}
+  - {t: V, h: Ctl+V}
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - {t: /, h: '?'}
+  - LGUI
+  - {t: BACKSPACE, h: symbol}
+  - {t: DEL, h: number}
+  - {t: ENTER, h: window}
+  - {t: SPACE, h: window}
+  - {t: navigation, h: toggle}
+  lower:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LGUI
+  - {t: ▽, type: trans}
+  - SPACE
+  - RET
+  - {t: ▽, type: trans}
+  - RALT
+  symbol:
+  - '!'
+  - '@'
+  - '#'
+  - {t: $, h: '4'}
+  - '%'
+  - \
+  - '"'
+  - '{'
+  - '}'
+  - '|'
+  - BACKSPACE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ^, h: '~'}
+  - '&'
+  - '`'
+  - '='
+  - (
+  - )
+  - ;
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '-'
+  - _
+  - {t: '[', h: <}
+  - {t: ']', h: '>'}
+  - {t: /, h: '?'}
+  - LGUI
+  - {t: default, h: toggle, type: held}
+  - SPACE
+  - RET
+  - {t: ▽, type: trans}
+  - RALT
+  number:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - Sft+%
+  - BACKSPACE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '4'
+  - {t: '4', h: '='}
+  - '5'
+  - '6'
+  - '-'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '1'
+  - '1'
+  - '2'
+  - '3'
+  - +
+  - DEL
+  - {t: ▽, type: trans}
+  - {t: '0', type: held}
+  - .
+  - '0'
+  - ','
+  navigation:
+  - Ctl+Alt+1
+  - Ctl+Alt+2
+  - Ctl+Alt+3
+  - Ctl+Alt+4
+  - Ctl+Alt+5
+  - Meh+1
+  - Meh+2
+  - Meh+3
+  - Meh+4
+  - Meh+5
+  - LCTRL
+  - ''
+  - {t: default, h: toggle}
+  - {t: default, h: toggle}
+  - ''
+  - ''
+  - Ctl+Alt+H
+  - Ctl+Alt+J
+  - Ctl+Alt+K
+  - Ctl+Alt+L
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - Meh+P
+  - Ctl+Alt+F
+  - Alt+Ctl+M
+  - Sft+Ctl+L
+  - Sft+Ctl+K
+  - '&lgui_and_type'
+  - {t: default, h: toggle}
+  - '&alttab'
+  - {t: default, h: toggle}
+  - {t: default, h: toggle}
+  - {t: default, h: toggle}
+  window:
+  - Ctl+Q
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+T
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - HOME
+  - END
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Ctl+LEFT ARROW
+  - Ctl+LEFT ARROW
+  - Ctl+RIGHT
+  - Ctl+RIGHT
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - {t: ▽, type: trans}
+  - VOLUME DOWN
+  - PREVIOUS
+  - PLAY PAUSE
+  - NEXT
+  - VOLUME UP
+  - {t: ▽, type: trans}
+  - {t: '&select_line_right', s: '&select_line_left'}
+  - {t: '&select_line_right', s: '&select_line_left'}
+  - {t: '&select_word_right', s: '&select_word_left'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&alttab'
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  bootlaader:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: LGUI, type: held}
+  - {type: held}
+  - {t: SPACE, type: held}
+  - RET
+  - {t: ▽, type: trans}
+  - RALT
+combos:
+- p: [30, 31, 32]
+  k: {t: bootlaader, h: sticky}
+  l: [default]
+- p: [33, 34, 35]
+  k: {t: bootlaader, h: sticky}
+  l: [default]
+- p: [12, 13]
+  k: TAB
+  l: [default]
+- p: [11, 12]
+  k: ESC
+  l: [default]
+- p: [23, 32]
+  k: PASTE
+  l: [default]
+- p: [22, 32]
+  k: COPY
+  l: [default]
+- p: [21, 32]
+  k: CUT
+  l: [default]
+- p: [16, 17]
+  k: Meh+H
+  l: [navigation]
+- p: [18, 19]
+  k: Meh+L
+  l: [navigation]
+- p: [17, 18]
+  k: Ctl+Alt+D
+  l: [navigation]
+- p: [7, 8]
+  k: Meh+J
+  l: [navigation]
+- p: [27, 28]
+  k: Meh+K
+  l: [navigation]
+- p: [17, 18]
+  k: ESC
+  l: [default]
+- p: [28, 26, 27]
+  k: Alt+F4
+  l: [navigation]
+- p: [18, 19]
+  k: ;
+  l: [default]
+- p: [13, 19]
+  k: ':'
+  l: [default]
+- p: [16, 3]
+  k: $
+  l: [default]

@@ -145,6 +145,70 @@
         }
       }
     },
+    "python313Packages.keymap-drawer@latest": {
+      "last_modified": "2025-08-01T14:55:05Z",
+      "resolved": "github:NixOS/nixpkgs/e7eabdc701d7dbb810fd91a97ec358caa4c1fc50#python313Packages.keymap-drawer",
+      "source": "devbox-search",
+      "version": "0.22.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/miy4jzfjjn1slh8zqdp6zyc4qsjymjsj-python3.13-keymap-drawer-0.22.1",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/nv4d82z1cjl9prn0aqabjsh9njksbjc7-python3.13-keymap-drawer-0.22.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/miy4jzfjjn1slh8zqdp6zyc4qsjymjsj-python3.13-keymap-drawer-0.22.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/ir0k3cf2qavdyihgl69wwj12vh2qxid8-python3.13-keymap-drawer-0.22.1",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/mj4gaj35nflvsfb4niqvc0z9lkvn1zvq-python3.13-keymap-drawer-0.22.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/ir0k3cf2qavdyihgl69wwj12vh2qxid8-python3.13-keymap-drawer-0.22.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/pbp05my0d13x59g6qhsv0wca5sbd1h02-python3.13-keymap-drawer-0.22.1",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/agmgizqfjixad9nrzqhw5k3rcqsspry4-python3.13-keymap-drawer-0.22.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/pbp05my0d13x59g6qhsv0wca5sbd1h02-python3.13-keymap-drawer-0.22.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fmgpsd17y3i01s9r56yqj1k4clanrbrs-python3.13-keymap-drawer-0.22.1",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/j9f9ii3kdfkpl1zimr060v5vp9ccz483-python3.13-keymap-drawer-0.22.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/fmgpsd17y3i01s9r56yqj1k4clanrbrs-python3.13-keymap-drawer-0.22.1"
+        }
+      }
+    },
     "python313Packages.west@latest": {
       "last_modified": "2025-07-28T17:09:23Z",
       "resolved": "github:NixOS/nixpkgs/648f70160c03151bc2121d179291337ad6bc564b#python313Packages.west",
@@ -206,6 +270,111 @@
             }
           ],
           "store_path": "/nix/store/ya0qw1inmixdmqr5zyf9iks5l5awfz2h-python3.13-west-1.4.0"
+        }
+      }
+    },
+    "python@latest": {
+      "last_modified": "2025-05-16T20:19:48Z",
+      "plugin_version": "0.0.4",
+      "resolved": "github:NixOS/nixpkgs/12a55407652e04dcf2309436eb06fef0d3713ef3#python313",
+      "source": "devbox-search",
+      "version": "3.13.3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1a8xg8l3m67hxinxzzcsak9736qm9vsf-python3-3.13.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/1a8xg8l3m67hxinxzzcsak9736qm9vsf-python3-3.13.3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/yy0xvc2rydhrs0h1v8d7r3sql347xzz5-python3-3.13.3",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/42bxfqfrh8cwspl7szr0cw8739xv8qlq-python3-3.13.3-debug"
+            }
+          ],
+          "store_path": "/nix/store/yy0xvc2rydhrs0h1v8d7r3sql347xzz5-python3-3.13.3"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gbrigjhghz9v2p0zf9b2fnvs0g0yx7q4-python3-3.13.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/gbrigjhghz9v2p0zf9b2fnvs0g0yx7q4-python3-3.13.3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/2mab9iiwhcqwk75qwvp3zv0bvbiaq6cs-python3-3.13.3",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/9z6k8ijl2md0y2n95yprbjj4vxbfsi15-python3-3.13.3-debug"
+            }
+          ],
+          "store_path": "/nix/store/2mab9iiwhcqwk75qwvp3zv0bvbiaq6cs-python3-3.13.3"
+        }
+      }
+    },
+    "uv@latest": {
+      "last_modified": "2025-07-28T17:09:23Z",
+      "resolved": "github:NixOS/nixpkgs/648f70160c03151bc2121d179291337ad6bc564b#uv",
+      "source": "devbox-search",
+      "version": "0.8.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/db9y1b002zlnyjgpsnbl9hvlwsiqajl4-uv-0.8.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/db9y1b002zlnyjgpsnbl9hvlwsiqajl4-uv-0.8.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/bdps6h2gn2rysavc3cq2slqnjlsyyk03-uv-0.8.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/bdps6h2gn2rysavc3cq2slqnjlsyyk03-uv-0.8.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/91g6383zq1wbiik2an7g6yfrj294c19v-uv-0.8.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/91g6383zq1wbiik2an7g6yfrj294c19v-uv-0.8.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/swq8qrr7n5gkc1b4940q62a3ll52prgl-uv-0.8.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/swq8qrr7n5gkc1b4940q62a3ll52prgl-uv-0.8.2"
         }
       }
     }

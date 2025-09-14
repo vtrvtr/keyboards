@@ -126,3 +126,15 @@ This build system uses the official ZMK Docker image (`zmkfirmware/zmk-build-arm
 - ✅ **Simple Commands**: Easy-to-remember `just` commands
 
 Happy typing! 🎹⌨️
+
+## Keymap Diagram
+
+The current Corne keymap is rendered to SVG for quick reference:
+
+![Corne Keymap](assets/corne_keymap.svg)
+
+Regenerate after editing `config/corne.keymap`:
+
+```bash
+just keymap
+```
