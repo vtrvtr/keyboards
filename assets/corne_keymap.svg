@@ -299,16 +299,16 @@ path.combo {
 <path d="M252,231 l-37,3" class="combo"/>
 <path d="M252,231 l38,-6" class="combo"/>
 <rect rx="6" ry="6" x="238" y="218" width="28" height="26" class="combo"/>
-<a href="#bootlaader">
-<text x="252" y="231" class="combo tap layer-activator"><tspan style="font-size: 70%">bootlaader</tspan></text>
+<a href="#bootloader">
+<text x="252" y="231" class="combo tap layer-activator"><tspan style="font-size: 70%">bootloader</tspan></text>
 </a><text x="252" y="242" class="combo hold">sticky</text>
 </g>
 <g class="combo combopos-1">
 <path d="M476,231 l-38,-6" class="combo"/>
 <path d="M476,231 l37,3" class="combo"/>
 <rect rx="6" ry="6" x="462" y="218" width="28" height="26" class="combo"/>
-<a href="#bootlaader">
-<text x="476" y="231" class="combo tap layer-activator"><tspan style="font-size: 70%">bootlaader</tspan></text>
+<a href="#bootloader">
+<text x="476" y="231" class="combo tap layer-activator"><tspan style="font-size: 70%">bootloader</tspan></text>
 </a><text x="476" y="242" class="combo hold">sticky</text>
 </g>
 <g class="combo combopos-2">
@@ -1037,8 +1037,8 @@ path.combo {
 </g>
 </g>
 </g>
-<g transform="translate(30, 1596)" class="layer-bootlaader">
-<text x="0" y="28" class="label" id="bootlaader">bootlaader:</text>
+<g transform="translate(30, 1596)" class="layer-bootloader">
+<text x="0" y="28" class="label" id="bootloader">bootloader:</text>
 <g transform="translate(0, 56)">
 <g transform="translate(28, 45)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>

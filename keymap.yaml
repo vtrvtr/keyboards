@@ -185,7 +185,7 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  bootlaader:
+  bootloader:
   - '1'
   - '2'
   - '3'
@@ -224,10 +224,10 @@ layers:
   - RALT
 combos:
 - p: [30, 31, 32]
-  k: {t: bootlaader, h: sticky}
+  k: {t: bootloader, h: sticky}
   l: [default]
 - p: [33, 34, 35]
-  k: {t: bootlaader, h: sticky}
+  k: {t: bootloader, h: sticky}
   l: [default]
 - p: [12, 13]
   k: TAB
