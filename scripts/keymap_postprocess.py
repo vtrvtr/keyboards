@@ -28,6 +28,20 @@ MAP = {
     "&windown": "Win↓",
     "&winbar": "WinBar",
     "&bootloader": "Boot",
+    # Modifiers normalization
+    "LGUI": "Gui",
+    "RGUI": "Gui",
+    "LCTRL": "Ctl",
+    "RCTRL": "Ctl",
+    "LEFT ALT": "Alt",
+    "RIGHT ALT": "AltGr",
+    "LALT": "Alt",
+    "RALT": "AltGr",
+    "LEFT SHIFT": "Sft",
+    "RIGHT SHIFT": "Sft",
+    "LSHIFT": "Sft",
+    "RSHIFT": "Sft",
+    "RSHFT": "Sft",
 }
 
 
@@ -62,4 +76,3 @@ if __name__ == "__main__":
         print("Usage: keymap_postprocess.py <keymap.yaml>", file=sys.stderr)
         raise SystemExit(2)
     raise SystemExit(main(Path(sys.argv[1])))
-

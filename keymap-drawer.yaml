@@ -19,10 +19,6 @@ parse_config:
     "&bootloader": Boot
     "&none": ""
 
-  layer_legend_map:
-    "0": default
-    "1": symbol
-    "2": number
-    "3": navigation
-    "4": window
-    "5": bootloader
+  # Use layer names as-is (default, symbol, number, navigation, window, bootloader).
+  # Leave layer_legend_map empty to avoid warnings about unknown names.
+  layer_legend_map: {}
