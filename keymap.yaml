@@ -37,43 +37,6 @@ layers:
   - {t: ENTER, h: window}
   - {t: SPACE, h: window}
   - {t: navigation, h: toggle}
-  lower:
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - LGUI
-  - {t: ▽, type: trans}
-  - SPACE
-  - RET
-  - {t: ▽, type: trans}
-  - RALT
   symbol:
   - '!'
   - '@'
@@ -283,25 +246,25 @@ combos:
   l: [default]
 - p: [16, 17]
   k: Meh+H
-  l: [navigation]
+  l: [window]
 - p: [18, 19]
   k: Meh+L
-  l: [navigation]
+  l: [window]
 - p: [17, 18]
   k: Ctl+Alt+D
-  l: [navigation]
+  l: [window]
 - p: [7, 8]
   k: Meh+J
-  l: [navigation]
+  l: [window]
 - p: [27, 28]
   k: Meh+K
-  l: [navigation]
+  l: [window]
 - p: [17, 18]
   k: ESC
   l: [default]
 - p: [28, 26, 27]
   k: Alt+F4
-  l: [navigation]
+  l: [window]
 - p: [18, 19]
   k: ;
   l: [default]
