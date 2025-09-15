@@ -842,6 +842,34 @@ path.combo {
 <text x="0" y="0" class="key tap layer-activator">default</text>
 </a><text x="0" y="24" class="key hold">toggle</text>
 </g>
+<g class="combo combopos-0">
+<rect rx="6" ry="6" x="546" y="74" width="28" height="26" class="combo"/>
+<text x="560" y="87" class="combo tap">Meh+H</text>
+</g>
+<g class="combo combopos-1">
+<rect rx="6" ry="6" x="658" y="82" width="28" height="26" class="combo"/>
+<text x="672" y="95" class="combo tap">Meh+L</text>
+</g>
+<g class="combo combopos-2">
+<rect rx="6" ry="6" x="602" y="74" width="28" height="26" class="combo"/>
+<text x="616" y="87" class="combo tap">
+<tspan x="616" dy="-0.6em">Ctl+Alt</tspan><tspan x="616" dy="1.2em">+D</tspan>
+</text>
+</g>
+<g class="combo combopos-3">
+<rect rx="6" ry="6" x="602" y="18" width="28" height="26" class="combo"/>
+<text x="616" y="31" class="combo tap">Meh+J</text>
+</g>
+<g class="combo combopos-4">
+<rect rx="6" ry="6" x="602" y="130" width="28" height="26" class="combo"/>
+<text x="616" y="143" class="combo tap">Meh+K</text>
+</g>
+<g class="combo combopos-5">
+<path d="M588,144 l37,1" class="combo"/>
+<path d="M588,144 l-37,1" class="combo"/>
+<rect rx="6" ry="6" x="574" y="131" width="28" height="26" class="combo"/>
+<text x="588" y="144" class="combo tap">Alt+F4</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 1277)" class="layer-window">
@@ -1003,34 +1031,6 @@ path.combo {
 <g transform="translate(532, 235)" class="key trans keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 <text x="0" y="0" class="key trans tap">▽</text>
-</g>
-<g class="combo combopos-0">
-<rect rx="6" ry="6" x="546" y="74" width="28" height="26" class="combo"/>
-<text x="560" y="87" class="combo tap">Meh+H</text>
-</g>
-<g class="combo combopos-1">
-<rect rx="6" ry="6" x="658" y="82" width="28" height="26" class="combo"/>
-<text x="672" y="95" class="combo tap">Meh+L</text>
-</g>
-<g class="combo combopos-2">
-<rect rx="6" ry="6" x="602" y="74" width="28" height="26" class="combo"/>
-<text x="616" y="87" class="combo tap">
-<tspan x="616" dy="-0.6em">Ctl+Alt</tspan><tspan x="616" dy="1.2em">+D</tspan>
-</text>
-</g>
-<g class="combo combopos-3">
-<rect rx="6" ry="6" x="602" y="18" width="28" height="26" class="combo"/>
-<text x="616" y="31" class="combo tap">Meh+J</text>
-</g>
-<g class="combo combopos-4">
-<rect rx="6" ry="6" x="602" y="130" width="28" height="26" class="combo"/>
-<text x="616" y="143" class="combo tap">Meh+K</text>
-</g>
-<g class="combo combopos-5">
-<path d="M588,144 l37,1" class="combo"/>
-<path d="M588,144 l-37,1" class="combo"/>
-<rect rx="6" ry="6" x="574" y="131" width="28" height="26" class="combo"/>
-<text x="588" y="144" class="combo tap">Alt+F4</text>
 </g>
 </g>
 </g>

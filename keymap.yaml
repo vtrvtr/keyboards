@@ -246,25 +246,25 @@ combos:
   l: [default]
 - p: [16, 17]
   k: Meh+H
-  l: [window]
+  l: [navigation]
 - p: [18, 19]
   k: Meh+L
-  l: [window]
+  l: [navigation]
 - p: [17, 18]
   k: Ctl+Alt+D
-  l: [window]
+  l: [navigation]
 - p: [7, 8]
   k: Meh+J
-  l: [window]
+  l: [navigation]
 - p: [27, 28]
   k: Meh+K
-  l: [window]
+  l: [navigation]
 - p: [17, 18]
   k: ESC
   l: [default]
 - p: [28, 26, 27]
   k: Alt+F4
-  l: [window]
+  l: [navigation]
 - p: [18, 19]
   k: ;
   l: [default]
