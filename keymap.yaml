@@ -142,9 +142,9 @@ layers:
   - Alt+Ctl+M
   - Sft+Ctl+L
   - Sft+Ctl+K
-  - '&lgui_and_type'
+  - GuiType
   - {t: default, h: toggle}
-  - '&alttab'
+  - AltTab
   - {t: default, h: toggle}
   - {t: default, h: toggle}
   - {t: default, h: toggle}
@@ -175,13 +175,13 @@ layers:
   - NEXT
   - VOLUME UP
   - {t: ▽, type: trans}
-  - {t: '&select_line_right', s: '&select_line_left'}
-  - {t: '&select_line_right', s: '&select_line_left'}
-  - {t: '&select_word_right', s: '&select_word_left'}
+  - SelLn
+  - SelLn
+  - SelWrd
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&alttab'
+  - AltTab
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -206,7 +206,7 @@ layers:
   - UP
   - RIGHT
   - {t: ▽, type: trans}
-  - '&bootloader'
+  - Boot
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -215,7 +215,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&bootloader'
+  - Boot
   - {t: LGUI, type: held}
   - {type: held}
   - {t: SPACE, type: held}

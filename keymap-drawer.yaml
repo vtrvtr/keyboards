@@ -1,0 +1,28 @@
+draw_config:
+  footer_text: ''
+
+parse_config:
+  raw_binding_map:
+    "&alttab": AltTab
+    "&lgui_and_type": GuiType
+    "&select_line": SelLn
+    "&select_line_right": "SelLn→"
+    "&select_line_left": "←SelLn"
+    "&select_word": SelWrd
+    "&select_word_right": "SelW→"
+    "&select_word_left": "←SelW"
+    "&winleft": "Win←"
+    "&winright": "Win→"
+    "&winup": "Win↑"
+    "&windown": "Win↓"
+    "&winbar": "WinBar"
+    "&bootloader": Boot
+    "&none": ""
+
+  layer_legend_map:
+    "0": default
+    "1": symbol
+    "2": number
+    "3": navigation
+    "4": window
+    "5": bootloader

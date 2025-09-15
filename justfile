@@ -128,7 +128,10 @@ keymap:
         echo "❌ keymap-drawer not found. Install with: pipx install keymap-drawer" >&2
         exit 1
     fi
-    $GEN parse -z config/corne.keymap -o keymap.yaml
+    CFG="-c keymap-drawer.yaml"
+    $GEN $CFG parse -z config/corne.keymap -o keymap.yaml
+    # Pretty-print custom macros/behaviors for nicer legends
+    python3 scripts/keymap_postprocess.py keymap.yaml || true
     mkdir -p assets
-    $GEN draw -j config/info.json -l LAYOUT_split_3x5_3 keymap.yaml -o assets/corne_keymap.svg
+    $GEN $CFG draw -j config/info.json -l LAYOUT_split_3x5_3 keymap.yaml -o assets/corne_keymap.svg
     echo "✅ Wrote assets/corne_keymap.svg"
