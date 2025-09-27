@@ -1,4 +1,23 @@
 draw_config:
+  # Bigger keys and more spacing for readability
+  key_w: 72.0
+  key_h: 64.0
+  split_gap: 36.0
+  combo_w: 40.0
+  combo_h: 34.0
+  inner_pad_w: 4.0
+  inner_pad_h: 4.0
+  outer_pad_w: 40.0
+  outer_pad_h: 64.0
+  # Larger text, especially holds
+  glyph_tap_size: 16
+  glyph_hold_size: 15
+  glyph_shifted_size: 12
+  line_spacing: 1.25
+  # Only shrink very long legends
+  shrink_wide_legends: 10
+  # Make holds bolder for contrast
+  svg_extra_style: '.key.hold{font-weight:600}.combo{font-size:18px;font-weight:700}.combo.tap{font-size:20px}'
   footer_text: ''
 
 parse_config:

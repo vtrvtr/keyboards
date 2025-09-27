@@ -7,7 +7,7 @@ layers:
   - W
   - E
   - t: R
-    h: F5
+    h: "F5\xB7longer_hold"
   - T
   - Y
   - U
@@ -15,47 +15,47 @@ layers:
   - O
   - P
   - t: A
-    h: Gui
+    h: "Gui\xB7homey_left"
   - t: S
-    h: Ctl
+    h: "Ctl\xB7homey_left"
   - t: D
-    h: Alt
+    h: "Alt\xB7homey_left"
   - t: F
-    h: Sft
+    h: "Sft\xB7homey_left"
   - G
   - t: H
-    h: Sft
+    h: "Sft\xB7homey_right"
   - t: J
-    h: Sft
+    h: "Sft\xB7homey_right"
   - t: K
-    h: Alt
+    h: "Alt\xB7homey_right"
   - t: L
-    h: Ctl
+    h: "Ctl\xB7homey_right"
   - t: ''''
-    h: Gui
+    h: "Gui\xB7homey_right"
   - Z
   - t: X
-    h: Ctl+X
+    h: "Ctl+X\xB7homey_left"
   - t: C
-    h: Ctl+C
+    h: "Ctl+C\xB7homey_left"
   - t: V
-    h: Ctl+V
+    h: "Ctl+V\xB7homey_left"
   - B
   - N
   - M
   - ','
   - .
   - t: /
-    h: '?'
+    h: "?\xB7mt"
   - Gui
   - t: BACKSPACE
-    h: symbol
+    h: "symbol\xB7thumb"
   - t: DEL
-    h: number
+    h: "number\xB7lspace"
   - t: ENTER
-    h: window
+    h: "window\xB7rspace"
   - t: SPACE
-    h: window
+    h: "window\xB7thumb"
   - t: navigation
     h: toggle
   symbol:
@@ -63,7 +63,7 @@ layers:
   - '@'
   - '#'
   - t: $
-    h: '4'
+    h: "4\xB7LH"
   - '%'
   - \
   - '"'
@@ -73,7 +73,7 @@ layers:
   - BACKSPACE
   - t: "\u25BD"
     type: trans
-  - t: "\u25BD"
+  - t: "\u25BD\xB7MT"
     type: trans
   - t: ^
     h: '~'
@@ -89,9 +89,9 @@ layers:
     type: trans
   - t: "\u25BD"
     type: trans
-  - t: "\u25BD"
+  - t: "\u25BD\xB7MT"
     type: trans
-  - t: "\u25BD"
+  - t: "\u25BD\xB7MT"
     type: trans
   - '-'
   - _
@@ -128,7 +128,7 @@ layers:
     type: trans
   - t: "\u25BD"
     type: trans
-  - t: "\u25BD"
+  - t: "\u25BD\xB7MT"
     type: trans
   - '4'
   - t: '4'
