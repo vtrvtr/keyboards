@@ -123,11 +123,11 @@
         winleft,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp LEFT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -139,11 +139,11 @@
         winright,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp RIGHT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -155,11 +155,11 @@
         winup,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp UP>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -170,11 +170,11 @@
         windown,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp DOWN>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -185,9 +185,9 @@
         winbar,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp SPACE>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -593,7 +593,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp EXCL  &kp AT  &kp HASH  &longer_hold NUMBER_4 DOLLAR  &kp PRCNT  &kp BACKSLASH  &kp DOUBLE_QUOTES  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE  &kp BACKSPACE  &trans  &trans  &mt TILDE CARET  &kp AMPERSAND  &kp GRAVE  &kp EQUAL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp UNDERSCORE  &mt LESS_THAN LEFT_BRACKET  &mt GREATER_THAN RIGHT_BRACKET  &mt QUESTION SLASH  &kp LGUI  &to 0  &kp SPACE  &kp RET  &trans  &kp RALT
+&kp EXCL  &kp AT  &kp HASH  &longer_hold NUMBER_4 DOLLAR  &kp PRCNT  &kp BACKSLASH  &kp DOUBLE_QUOTES  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE  &kp BACKSPACE  &trans  &mt TILDE CARET  &kp AMPERSAND  &kp AMPERSAND  &kp GRAVE  &kp EQUAL  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp UNDERSCORE  &mt LESS_THAN LEFT_BRACKET  &mt GREATER_THAN RIGHT_BRACKET  &mt QUESTION SLASH  &kp LGUI  &to 0  &kp SPACE  &kp RET  &trans  &kp RALT
             >;
         };
 
