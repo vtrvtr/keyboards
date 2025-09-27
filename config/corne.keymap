@@ -123,11 +123,11 @@
         winleft,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp LEFT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -139,11 +139,11 @@
         winright,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp RIGHT>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -155,11 +155,11 @@
         winup,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp UP>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -170,11 +170,11 @@
         windown,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp DOWN>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &sk LGUI>,
-            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // this will release GUI after a timeout,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -185,9 +185,9 @@
         winbar,
         bindings =
             <&macro_press &kp LGUI>,
-            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // leave GUI down to keep menu up,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_tap &kp SPACE>,
-            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // combines with shift fine,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&macro_release &kp LGUI>;
 
         // now release the previous hold;
@@ -386,6 +386,33 @@
             quick-tap-ms = <100>;
         };
 
+        home_lshift: home_lshift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_LSHIFT";
+            flavor = "hold-preferred";
+            hold-trigger-key-positions = <30 31 32 33 34 35 25 5 16 6 15 26 27 17 7 8 18 28 29 19 9>;
+            hold-trigger-on-release;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <125>;
+            require-prior-idle-ms = <100>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        home_rshift: home_rshift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_RSHIFT";
+            flavor = "hold-preferred";
+            hold-trigger-on-release;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <125>;
+            require-prior-idle-ms = <100>;
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 33 34 35 30 31 32>;
+        };
+
         ZMK_MACRO(
 
         extend_line_right,
@@ -581,7 +608,7 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp Q  &kp W  &kp E  &longer_hold F5 R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &homey_left LCTRL S  &homey_left LEFT_ALT D  &homey_left LEFT_SHIFT F  &kp G  &homey_right RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SQT  &kp Z  &homey_left LC(X) X  &homey_left LC(C) C  &homey_left LC(V) V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &mt QUESTION SLASH  &kp LGUI  &thumb 1 BACKSPACE  &lspace 2 DEL  &rspace 4 ENTER  &thumb 4 SPACE  &to 3
+&kp Q  &kp W  &kp E  &longer_hold F5 R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &homey_left LGUI A  &homey_left LCTRL S  &homey_left LEFT_ALT D  &home_lshift LEFT_SHIFT F  &kp G  &home_rshift RSHFT H  &homey_right LEFT_SHIFT J  &homey_right LEFT_ALT K  &homey_right LCTRL L  &homey_right LGUI SQT  &kp Z  &homey_left LC(X) X  &homey_left LC(C) C  &homey_left LC(V) V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &mt QUESTION SLASH  &kp LGUI  &thumb 1 BACKSPACE  &lspace 2 DEL  &rspace 4 ENTER  &thumb 4 SPACE  &to 3
             >;
         };
 
